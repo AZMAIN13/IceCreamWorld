@@ -1,16 +1,51 @@
-// Update the flavor selection
-function selectFlavor() {
-    const flavor = document.getElementById("flavor-select").value;
-    const selectedFlavorText = `You have selected: ${flavor}`;
-    document.getElementById("selected-flavor").textContent = selectedFlavorText;
+//navbar
+let navbar = document.querySelector('.header .navbar');
+let menuBtn = document.querySelector('.header #menu-btn');
+
+menuBtn.onclick = () => {
+  menuBtn.classList.toggle('fa-times');
+  navbar.classList.toggle('active');
 }
 
-// Show alert for selected ice cream
-function showAlert(flavor) {
-    alert(`You clicked on ${flavor} ice cream!`);
+window.onscroll = () =>{
+  menuBtn.classList.remove('fa-times');
+  navbar.classList.remove('active');
 }
 
-// Learn More action
-function learnMore() {
-    alert("Thank you for visiting Ice Cream World! More content coming soon!");
-}
+
+// home swiper 
+var swiper = new Swiper(".home-slider",{
+  grabCursor:true,
+  loop:true,
+  centeredSlides:true,
+  navigation:{
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+});
+
+//light gallery
+lightGallery(document.querySelector('.gallery .gallery-container'));
+
+
+// reviews swiper 
+var swiper = new Swiper(".reviews-slider",{
+  grabCursor:true,
+  loop:true,
+  spaceBetween:20,
+  pagination:{
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints:{
+    0: {
+    slidesPerView: 1,
+  },
+    768: {
+    slidesPerView: 2,
+  },
+    991: {
+    slidesPerView: 3,
+  },
+  }
+});
