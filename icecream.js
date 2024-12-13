@@ -1,15 +1,16 @@
-// Flavor selection functionality
-document.getElementById("chooseButton").addEventListener("click", function() {
-  const flavorSelect = document.getElementById("flavorSelect");
-  const selectedFlavor = flavorSelect.value;
-  document.getElementById("selectedFlavor").innerText = `You have selected: ${selectedFlavor}`;
-  changeIceCreamImage(selectedFlavor);
-});
+// Update the flavor selection
+function selectFlavor() {
+    const flavor = document.getElementById("flavor-select").value;
+    const selectedFlavorText = `You have selected: ${flavor}`;
+    document.getElementById("selected-flavor").textContent = selectedFlavorText;
+}
 
-// Ice cream option buttons
-document.querySelectorAll(".ice-cream-btn").forEach(button => {
-  button.addEventListener("click", function() {
-    const flavor = button.getAttribute("data-flavor");
-    document.getElementById("selectedFlavor").innerText = `You have selected: ${flavor}`;
-    changeIceCreamImage(flavor);
-  });
+// Show alert for selected ice cream
+function showAlert(flavor) {
+    alert(`You clicked on ${flavor} ice cream!`);
+}
+
+// Learn More action
+function learnMore() {
+    alert("Thank you for visiting Ice Cream World! More content coming soon!");
+}
