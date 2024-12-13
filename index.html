@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ice Cream World - Official Page</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Make sure styles.css is in the same directory -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="hero">
-      <h1>Welcome to Ice Cream World</h1>
-      <p>Delicious Flavors, Heavenly Taste</p>
-      <button id="getStarted">Get Started</button>
+    <div class="header">
+        <h1>Welcome to Ice Cream World</h1>
+        <p>Delicious Flavors, Heavenly Taste</p>
     </div>
-  </header>
+    <div class="main-content">
+        <section class="flavor-selection">
+            <h2>Select Your Favorite Flavor</h2>
+            <select id="flavor-select">
+                <option value="Chocolate">Chocolate</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Strawberry">Strawberry</option>
+                <option value="Mint">Mint</option>
+                <option value="Mango">Mango</option>
+            </select>
+            <button onclick="selectFlavor()">Choose Flavor</button>
+            <p id="selected-flavor">You have selected: None</p>
+        </section>
 
-  <main>
-    <section class="flavor-selection">
-      <h2>Select Your Favorite Flavor</h2>
-      <div class="flavor-dropdown">
-        <select id="flavorSelect">
-          <option value="vanilla">Vanilla</option>
-          <option value="chocolate">Chocolate</option>
-          <option value="strawberry">Strawberry</option>
-          <option value="mint">Mint</option>
-          <option value="mango">Mango</option>
-        </select>
-        <button id="chooseButton">Choose Flavor</button>
-      </div>
-      <p id="selectedFlavor">You have selected: None</p>
-    </section>
+        <section class="flavor-gallery">
+            <h2>Explore Ice Cream Options</h2>
+            <div class="gallery">
+                <div class="card" onclick="showAlert('Vanilla')">
+                    <img src="vanilla.jpg" alt="Vanilla Ice Cream">
+                    <p>Vanilla</p>
+                </div>
+                <div class="card" onclick="showAlert('Chocolate')">
+                    <img src="chocolate.jpg" alt="Chocolate Ice Cream">
+                    <p>Chocolate</p>
+                </div>
+                <div class="card" onclick="showAlert('Strawberry')">
+                    <img src="strawberry.jpg" alt="Strawberry Ice Cream">
+                    <p>Strawberry</p>
+                </div>
+                <div class="card" onclick="showAlert('Mint')">
+                    <img src="mint.jpg" alt="Mint Ice Cream">
+                    <p>Mint</p>
+                </div>
+                <div class="card" onclick="showAlert('Mango')">
+                    <img src="mango.jpg" alt="Mango Ice Cream">
+                    <p>Mango</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="explore">
-      <h2>Explore Ice Cream Options</h2>
-      <div class="ice-cream-options">
-        <button class="ice-cream-btn" data-flavor="vanilla">Vanilla</button>
-        <button class="ice-cream-btn" data-flavor="chocolate">Chocolate</button>
-        <button class="ice-cream-btn" data-flavor="strawberry">Strawberry</button>
-        <button class="ice-cream-btn" data-flavor="mint">Mint</button>
-        <button class="ice-cream-btn" data-flavor="mango">Mango</button>
-      </div>
-    </section>
-
-    <section class="ice-cream-image" id="iceCreamImage">
-      <p>Click a flavor to see the ice cream!</p>
-    </section>
-
-    <section class="our-story">
-      <h2>Our Story</h2>
-      <p>At Ice Cream World, we bring you the creamiest and most delicious ice creams made from the finest ingredients. From classic flavors to unique creations, there's something for everyone to enjoy!</p>
-      <button class="action-btn">Learn More</button>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2024 Ice Cream World. All Rights Reserved.</p>
+        <section class="about-us">
+            <h2>Our Story</h2>
+            <p>
+                At Ice Cream World, we bring you the creamiest and most delicious ice creams made from the finest ingredients. 
+                From classic flavors to unique creations, there’s something for everyone to enjoy!
+            </p>
+            <button onclick="learnMore()">Learn More</button>
+        </section>
     </div>
-  </footer>
+    <div class="footer">
+        <p>© 2024 Ice Cream World. All Rights Reserved.</p>
+    </div>
 
-  <script src="script.js"></script> <!-- Make sure script.js is in the same directory -->
+    <script src="script.js"></script>
 </body>
 </html>
